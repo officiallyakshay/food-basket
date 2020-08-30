@@ -1,0 +1,47 @@
+{
+  "name": "food-basket",
+  "version": "1.0.0",
+  "description": "# App that shows location of shelters and places in need of food",
+  "main": "index.js",
+  "scripts": {
+    "postinstall": "npm run webpack",
+    "webpack": "webpack",
+    "webpack:dev": "webpack --watch --mode=development",
+    "start:dev": "nodemon server/index.js --ignore dist/ --ignore src/ & npm run webpack:dev",
+    "start": "node server/index.js"
+  },
+  "babel": {
+    "presets": [
+      "@babel/react"
+    ]
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/officiallyakshay/food-basket.git"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/officiallyakshay/food-basket/issues"
+  },
+  "homepage": "https://github.com/officiallyakshay/food-basket#readme",
+  "devDependencies": {
+    "@babel/core": "^7.11.4",
+    "@babel/preset-react": "^7.10.4",
+    "babel-loader": "^8.1.0",
+    "react": "^16.13.1",
+    "react-dom": "^16.13.1",
+    "webpack": "^4.44.1",
+    "webpack-cli": "^3.3.12"
+  },
+  "dependencies": {
+    "axios": "^0.20.0",
+    "express": "^4.17.1",
+    "pg": "^8.3.3",
+    "react-redux": "^7.2.1",
+    "react-router-dom": "^5.2.0",
+    "redux": "^4.0.5",
+    "redux-thunk": "^2.3.0"
+  }
+}
