@@ -8,6 +8,7 @@ class App extends React.Component {
       <div>
         < Nav />
         < Routes />
+        
       </div>
     );
   };
