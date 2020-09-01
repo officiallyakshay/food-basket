@@ -1,4 +1,5 @@
-import React from 'react';
+import React, { Component } from 'react';
+import { Map,GoogleApiWrapper, InfoWindow, Marker } from 'google-maps-react';
 
 const Home = () => {
   return (
@@ -16,4 +17,6 @@ const Home = () => {
   );
 }
 
-export default Home;
+export default GoogleApiWrapper({
+  apiKey: 'AIzaSyA9QVRCFi7gUdzwot0oueSSy90hybtqNpM'
+})(App);
