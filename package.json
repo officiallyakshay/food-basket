@@ -4,7 +4,7 @@
   "description": "# App that shows location of shelters and places in need of food",
   "main": "server/index.js",
   "scripts": {
-    "postinstall": "npm run webpack",
+    "postinstall": "npm run webpack:dev",
     "webpack": "webpack --watch",
     "webpack:dev": "webpack --watch --mode=production",
     "start:dev": "nodemon server/index.js --ignore dist/ --ignore src/ & npm run webpack:dev",
@@ -40,14 +40,16 @@
   "dependencies": {
     "axios": "^0.20.0",
     "express": "^4.17.1",
+    "massive": "^6.6.0",
+    "nodemon": "^2.0.4",
     "file-loader": "^6.1.0",
     "google-maps-react": "^2.0.6",
-    "massive": "^6.6.0",
     "pg": "^8.3.3",
     "react-geocode": "^0.2.1",
     "react-redux": "^7.2.1",
     "react-router-dom": "^5.2.0",
     "redux": "^4.0.5",
-    "redux-thunk": "^2.3.0"
+    "redux-thunk": "^2.3.0",
+    "sqlite3": "^5.0.0"
   }
 }
