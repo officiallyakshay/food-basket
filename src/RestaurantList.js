@@ -13,9 +13,17 @@ export default function RestaurantList() {
 
   return (
     <div>
-      {restaurants.map((restaurant) => 
-        <div>{restaurant.name}</div>
-      )}
+      {restaurants.map((restaurant) => (
+        <div>
+          <div className="restaurantlist">{restaurant.name}</div>
+          <div>{restaurant.quantity}</div>
+          <div>{restaurant.address}</div>
+          <div>{restaurant.zipcode}</div>
+          <div>{restaurant.contact}</div>
+          <div>{restaurant.start}</div>
+          <div>{restaurant.end}</div>
+        </div>
+      ))}
     </div>
   );
 }
