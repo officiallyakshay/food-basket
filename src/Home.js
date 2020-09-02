@@ -1,22 +1,30 @@
-import React, { Component } from 'react';
-// import { Map,GoogleApiWrapper, InfoWindow, Marker } from 'google-maps-react';
+import React from 'react';
+import { Link } from 'react-router-dom'
 
-const Home = () => {
-  return (
-    <div style={{ textAlign: 'center' }}>
-      <h1>Food Basket</h1>
-      <h3>Providing food for those in need</h3>
-      <form>
-        <input placeholder="email" />
-        <br />
-        <input placeholder="password" />
-        <br />
-        <button>Submit</button>
-      </form>
-    </div>
-  );
-}
+class Home extends React.Component {
+  onClick(ev) {
+    ev.preventDefault();
+  };
+  render() {
+    const { onClick } = this;
+    return (
+      <div style={{ textAlign: 'center' }}>
+        <h1>Food Basket</h1>
+        <h3>Saving Food To Save Lives</h3>
+        <div>
+          <form>
+            <button onClick={(ev) => onClick(ev)}>
+              <Link to='/restaurant'>Feed Now</Link>
+            </button>
+            < br />
+            <button onClick={(ev) => onClick(ev)}>
+              <Link to='/user'>Get Food</Link>
+            </button>
+          </form>
+        </div>
+      </div>
+    );
+  };
+};
 
-export default GoogleApiWrapper({
-  apiKey: 'AIzaSyA9QVRCFi7gUdzwot0oueSSy90hybtqNpM'
-})(App);
+export default Home;
