@@ -1,5 +1,5 @@
 import React from 'react';
-import { BrowserRouter,Route, Switch } from 'react-router-dom';
+import { Route, Switch } from 'react-router-dom';
 import Home from './Home';
 import About from './About';
 import MapPage from './MapPage';
@@ -11,7 +11,6 @@ import GetFood from './GetFood';
 class Routes extends React.Component {
   render() {
     return ( 
-    <BrowserRouter>
       <Switch>
         <Route exact path='/' component = { Home } />
         <Route exact path='/about' component = { About } />
@@ -20,7 +19,6 @@ class Routes extends React.Component {
         <Route exact path='/nh' component = { NeedHelp } />
         <Route exact path='/getfood' component = {GetFood}/>
       </Switch>
-      </BrowserRouter>
     );
   };
 };
