@@ -31,7 +31,7 @@ var readRestaurantsInZip = function(zip, quantity, callback){
 }
 
 //After recipient chooses the restaurant, decrease the restaurant quantity by quantity and update the db
-var feedRecipients = function(rest_name, quantity, callback) {
+var feedRecipients = function(rest_name, zipcode, quantity, callback) {
   let db = new sqlite3.Database('./server/database/tinyDB.db', sqlite3.OPEN_READWRITE);
   let qry = "UPDATE restaurants SET quantity=quantity-'"+quantity+"' WHERE name='"+rest_name+"' and zipcode='"+zipcode+"'";
   db.all(qry, [], callback);
