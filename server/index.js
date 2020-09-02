@@ -21,7 +21,6 @@ app.delete("/api/restaurants/:id", restCtrl.removePost);
 const reciCtrl = require("./Controllers/recipientController")
 app.get("/api/recipients", reciCtrl.getRecipients)
 app.get("/api/recipients/:zip/:qty", reciCtrl.getZipRestaurants) //to get restaurants within zip
-
 app.post("/api/recipients", reciCtrl.addRecipient)
 app.delete("/api/recipients/:id", reciCtrl.removeRecipient);
 

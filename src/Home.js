@@ -20,7 +20,7 @@ class Home extends React.Component {
             </button>
             <br />
             <button onClick={(ev) => onClick(ev)}>
-              <Link to="/user">Get Food</Link>
+              <Link to="/getfood">Get Food</Link>
             </button>
           </form>
         </div>
