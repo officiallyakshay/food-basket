@@ -2,7 +2,7 @@
   "name": "food-basket",
   "version": "1.0.0",
   "description": "# App that shows location of shelters and places in need of food",
-  "main": "index.js",
+  "main": "server/index.js",
   "scripts": {
     "postinstall": "npm run webpack",
     "webpack": "webpack --watch",
@@ -38,6 +38,7 @@
   "dependencies": {
     "axios": "^0.20.0",
     "express": "^4.17.1",
+    "massive": "^6.6.0",
     "pg": "^8.3.3",
     "react-redux": "^7.2.1",
     "react-router-dom": "^5.2.0",
