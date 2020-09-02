@@ -23,28 +23,15 @@ var readRestaurants = function(callback) {
 
     let results = []
     db.all(`SELECT * FROM restaurants`, [], callback);
-    // db.serialize(() => {
-    //     db.each(`SELECT * FROM restaurants`, (err, row) => {
-    //       if (err) {
-    //         console.error("error at readrest", err.message);
-    //         callback(err);
-    //       }
-    //       var rest = new Restaurant(
-    //           name = row.name,
-    //           quantity = row.quantity,
-    //           address = row.address,
-    //           contact = row.contact,
-    //           start = row.start,
-    //           end = row.end
-    //      );
-    //      results.push(rest)
-    //      console.log(util.inspect(row));
-    //      //console.log(rest.name + "\t")
-    //      //console.log(rest + "\t");       //Prints out the Restaurant Object called rest. 
-    //     });
-    //     callback(null,results);
-    // });
     db.close()
+}
+
+var readRestaurants = function(callback) {
+  let db = new sqlite3.Database('./server/database/reci.db', sqlite3.OPEN_READWRITE);
+
+  let results = []
+  db.all(`SELECT * FROM recipients`, [], callback);
+  db.close()
 }
 
 module.exports = {
