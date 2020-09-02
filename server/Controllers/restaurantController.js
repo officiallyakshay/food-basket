@@ -40,11 +40,18 @@ const restaurants = [
     end_time: 4,
   },
 ];
-
-
+const queries = require("../database/query")
+console.log('queries', queries)
 module.exports = {
   getRestaurants: (req, res) => {
-    res.status(200).send(restaurants)
+    queries.readRestaurants((e, r) => {
+      if (e) {
+        console.error("error at readrest", err.message)
+      res.status(500)
+      }
+      res.status(200).send(r)
+    }
+    )
   },
   addRestaurant: (req,res) => {
     const {name, quantity, address, zipcode, contact, start_time, end_time} = req.body;
