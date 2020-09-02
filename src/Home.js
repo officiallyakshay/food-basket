@@ -1,10 +1,10 @@
-import React from 'react';
-import { Link } from 'react-router-dom'
+import React from "react";
+import { Link } from "react-router-dom";
 
 class Home extends React.Component {
   onClick(ev) {
     ev.preventDefault();
-  };
+  }
   render() {
     const { onClick } = this;
     return (
@@ -16,17 +16,17 @@ class Home extends React.Component {
         <div className="form">
           <form>
             <button onClick={(ev) => onClick(ev)}>
-              <Link to='/restaurant'>Feed Now</Link>
+              <Link to="/restaurant">Feed Now</Link>
             </button>
-            < br />
+            <br />
             <button onClick={(ev) => onClick(ev)}>
-              <Link to='/user'>Get Food</Link>
+              <Link to="/user">Get Food</Link>
             </button>
           </form>
         </div>
       </div>
     );
-  };
-};
+  }
+}
 
 export default Home;
