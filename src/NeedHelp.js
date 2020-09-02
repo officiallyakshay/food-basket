@@ -1,10 +1,12 @@
 import React from 'react';
+import {Link} from 'react-router-dom';
 import MapPage from '../src/MapPage';
-import { App } from './App';
 import Geocode from "react-geocode";
 import Logo from "./logo.PNG";
 import background from "./background.jpg";
-import Button from 'react-bootstrap/Button';
+import Button from 'react-bootstrap/Button';;
+
+
 
 Geocode.setApiKey("AIzaSyA9QVRCFi7gUdzwot0oueSSy90hybtqNpM");
 Geocode.setLanguage("en");
@@ -108,9 +110,7 @@ class NeedHelp extends React.Component {
   
   value = this.state.number;
    
-    alert("Thank you for feeding "+ value +" people today!"+
-    "    Make sure to follow social distancing protocols                                       WEAR A MASK      MAINTAIN SOCIAL DISTANCING           ")
-    
+    alert("Thank you for feeding "+ value +" people today!")
     
    
    
@@ -118,9 +118,12 @@ class NeedHelp extends React.Component {
 
   
      
-  
+  onClick(ev) {
+    ev.preventDefault();
+  };
 
   render() {
+    const { onClick } = this;
     return (
     
       <div style = {{backgroundColor:"rgb(240, 240, 245)" ,height: 1700, top:100}} className="SearchBar">
@@ -168,10 +171,9 @@ class NeedHelp extends React.Component {
     <strong>Add Me to Food Basket Map! <span>&nbsp;&nbsp;</span></strong>
    
        
-    <button type="submit" value="Submit" onClick={this.GoodJob} style = {{position: "absolute", color: "rgb(255, 102, 102)", height:40, width:100,color: "white", backgroundColor:"rgb(255, 102, 102)"}}>
-  Submit
-    
-</button>
+    <Button style ={{color: "rgb(255, 102, 102)"}} onClick={(event) => onClick(event)} onClick= {this.GoodJob}>
+              <Link to='/thankyou'>Submit</Link>
+            </Button>
 <br></br>
 <br></br>
     </label>
