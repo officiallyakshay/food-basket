@@ -53,6 +53,16 @@ module.exports = {
     }
     )
   },
+  feedRecipientsRest: (req, res) => {
+    queries.feedRecipients((e, r) => {
+      if (e) {
+        console.error("error at readrest", err.message)
+      res.status(500)
+      }
+      res.status(200).send(r)
+    }
+    )
+  },
   addRestaurant: (req,res) => {
     const {name, quantity, address, zipcode, contact, start_time, end_time} = req.body;
     let id = restaurants.length+1
