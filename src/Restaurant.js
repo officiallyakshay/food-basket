@@ -19,7 +19,7 @@ class Restaurant extends React.Component {
     const { name, number, numberServed, address, pickupTime } = this.state;
     const { onClick } = this;
     return (
-      <div className="restaurant" style={{ display: 'inline-flex' }}>
+      <div className="restaurant" style={{ display: 'table' }}>
         <h3>Don't be in haste to waste</h3>
         <div style={{ alignContent: 'center' }}>
           <form style={{ display: 'inline-grid' }}>
