@@ -9,9 +9,11 @@ class Home extends React.Component {
     const { onClick } = this;
     return (
       <div style={{ textAlign: 'center' }}>
-        <h1>Food Basket</h1>
-        <h3>Saving Food To Save Lives</h3>
-        <div>
+        <div className="home-text">
+          <h1>Food Basket</h1>
+          <h3>Saving Food To Save Lives</h3>
+        </div>
+        <div className="form">
           <form>
             <button onClick={(ev) => onClick(ev)}>
               <Link to='/restaurant'>Feed Now</Link>
