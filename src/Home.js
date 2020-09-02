@@ -16,7 +16,7 @@ class Home extends React.Component {
         <div className="form">
           <form>
             <button style={{ borderRadius: 45 }} onClick={(ev) => onClick(ev)}>
-              <Link style={{ textDecoration: 'none', color: 'blue' }} to="/restaurant">Feed Now</Link>
+              <Link style={{ textDecoration: 'none', color: 'blue' }} to="/nh">Feed Now</Link>
             </button>
             <br />
             <button style={{ borderRadius: 45 }} onClick={(ev) => onClick(ev)}>
