@@ -30,17 +30,25 @@
     "@babel/core": "^7.11.4",
     "@babel/preset-react": "^7.10.4",
     "babel-loader": "^8.1.0",
+    "css-loader": "^4.2.2",
     "react": "^16.13.1",
     "react-dom": "^16.13.1",
+    "style-loader": "^1.2.1",
     "webpack": "^4.44.1",
     "webpack-cli": "^3.3.12"
   },
   "dependencies": {
     "axios": "^0.20.0",
     "express": "^4.17.1",
+<<<<<<< HEAD
     "google-maps-react": "^2.0.6",
     "nodemon": "^2.0.4",
+=======
+    "file-loader": "^6.1.0",
+    "google-maps-react": "^2.0.6",
+>>>>>>> 112dd5012a37e607916dc6522a71b2abec113f40
     "pg": "^8.3.3",
+    "react-geocode": "^0.2.1",
     "react-redux": "^7.2.1",
     "react-router-dom": "^5.2.0",
     "redux": "^4.0.5",

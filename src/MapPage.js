@@ -7,48 +7,40 @@ import latVal from '../src/NeedHelp';
 const mapStyles = {
   width: '50%',
   height: '50%'
-  
 };
 
-
-class MapPage extends React.Component {
-  
-    
-  state = {
-    lat: latVal,
-    lng: longVal,
-  
-    showingInfoWindow: false,  //Hides or the shows the infoWindow
-    activeMarker: {},          //Shows the active marker upon click
-    selectedPlace: {}          //Shows the infoWindow to the selected place upon a marker
-  };
-  onMarkerClick = (props, marker, e) =>
-  this.setState({
-    selectedPlace: props,
-    activeMarker: marker,
-    showingInfoWindow: true
-  });
-
-onClose = props => {
-  if (this.state.showingInfoWindow) {
+class MapPage extends React.Component {  
+  constructor() {
+    super();  
+    this.state = {
+      lat: latVal,
+      lng: longVal,
+      showingInfoWindow: false,  //Hides or the shows the infoWindow
+      activeMarker: {},          //Shows the active marker upon click
+      selectedPlace: {}          //Shows the infoWindow to the selected place upon a marker
+    };
+  }
+  onMarkerClick (props, marker, e) {
     this.setState({
-      showingInfoWindow: false,
-      activeMarker: null
+      selectedPlace: props,
+      activeMarker: marker,
+      showingInfoWindow: true
     });
   }
-};
-
-
+  onClose(props) {
+    if (this.state.showingInfoWindow) {
+      this.setState({
+        showingInfoWindow: false,
+        activeMarker: null
+      });
+    }
+  };
   render() {
-    
     return (
-   
-  
       <Map
         google={this.props.google}
         zoom={14}
         style={mapStyles}
-       
         initialCenter={{
          latVal,longVal //it works when you put in actual coordinates
         }}
@@ -66,15 +58,11 @@ onClose = props => {
             <h4>{this.state.selectedPlace.name}</h4>
         </div>
       </InfoWindow>
-      </Map>
-     
-        
-     
-      
+      </Map> 
     );
   }
 }
 
 export default GoogleApiWrapper({
-  apiKey: 'AIzaSyA9QVRCFi7gUdzwot0oueSSy90hybtqNpM'
+  apiKey: 'AIzaSyDl6NClnt601rlaqaGeTdPU_XSZtYNWd2o'
 })(MapPage);
