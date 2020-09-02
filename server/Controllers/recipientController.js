@@ -43,7 +43,7 @@ const recipients = [
           console.error("error at readrest", err.message)
         res.status(500)
         }
-        res.status(200).send(r)
+        res.status(200).send(req.params)
       }
       )
     },
