@@ -5,6 +5,8 @@ import About from './About';
 import MapPage from './MapPage';
 import NeedHelp from './NeedHelp';
 import Restaurant from './Restaurant';
+import GetFood from './GetFood';
+
 
 class Routes extends React.Component {
   render() {
@@ -15,6 +17,7 @@ class Routes extends React.Component {
         <Route exact path='/restaurant' component = { Restaurant } />
         <Route exact path='/map' component = { MapPage } />
         <Route exact path='/nh' component = { NeedHelp } />
+        <Route exact path='/getfood' component = {GetFood}/>
       </Switch>
     );
   };
