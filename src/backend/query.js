@@ -2,7 +2,8 @@ const sqlite3 = require('sqlite3').verbose();
 var util = require('util');
 let Restaurant = require('./restaurant.js');
 
-
+//use for debugging purposes
+/* 
 let db = new sqlite3.Database('../../database/tinyDB.db', sqlite3.OPEN_READWRITE, (err) => {
     if (err) {
       console.error(err.message);
@@ -12,8 +13,10 @@ let db = new sqlite3.Database('../../database/tinyDB.db', sqlite3.OPEN_READWRITE
     }
     
   });
+*/
 
-
+//Populates the data into the Restaurant object and returns in a callback function. Will be useful
+//for displaying data on the website 
 var readRecords = function(callback) {
     let db = new sqlite3.Database('../../database/tinyDB.db', sqlite3.OPEN_READWRITE);
 
@@ -37,18 +40,21 @@ var readRecords = function(callback) {
           callback(row);
        });
     });
-
-    db.close((err) => {
-        if (err) {
-          console.error(err.message);
-        }
-        console.log('Close the database connection.');
-    });
+    db.close()
 }
+
+
 
 //Calling function using callback
 readRecords(function(row){
     console.log(row + "\t")
 });
 
-
+//Use for debugging purposes
+/*db.close((err) => {
+    if (err) {
+      console.error(err.message);
+    }
+    console.log('Close the database connection.');
+});
+*/
