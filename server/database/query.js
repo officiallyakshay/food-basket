@@ -22,13 +22,26 @@ var readRecipients = function(zipcode, callback) {
   db.close()
 }
 
-/*var feedRecipients = function(callback) {
+//Gets the restaurant within the zip code and has enough quantity
+var readRestaurantsInZip = function(zip, quantity, callback){
   let db = new sqlite3.Database('./server/database/tinyDB.db', sqlite3.OPEN_READWRITE);
+  let qry = "SELECT * FROM restaurants where zipcode='"+zip+"' and quantity>='"+quantity+"'";
+  db.all(qry, [], callback);
+  db.close()
+}
 
-}*/
+//After recipient chooses the restaurant, decrease the restaurant quantity by quantity and update the db
+var feedRecipients = function(rest_name, quantity, callback) {
+  let db = new sqlite3.Database('./server/database/tinyDB.db', sqlite3.OPEN_READWRITE);
+  let qry = "UPDATE restaurants SET quantity=quantity-'"+quantity+"' WHERE name='"+rest_name+"' and zipcode='"+zipcode+"'";
+  db.all(qry, [], callback);
+  db.close()
+}
 
 module.exports = {
   readRestaurants,
-  readRecipients
+  readRecipients,
+  readRestaurantsInZip,
+  feedRecipients
 }
 

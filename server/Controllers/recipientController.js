@@ -22,20 +22,17 @@ const recipients = [
     },
     addRecipient: (req,res) => {
       const {name, quantity, zipcode} = req.body;
-      let id = recipients.length+1
       const newRecipient = {
-        id,
         name: name || "add recipient name", 
         quantity: quantity || 0, 
         zipcode,
       }
-      id++
       recipients.push(newRecipient);
       res.status(200).send(recipients)
     },
     removeRecipient: (req, res) => {
     const {id} = req.params
-    const index = recipients.findIndex(element =>element.id === +id)
+    const index = recipients.findIndex(element =>element.name === +name)
     recipients.splice(index, 1)
     res.status(200).send(recipients)
     }

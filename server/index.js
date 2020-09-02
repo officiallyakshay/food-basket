@@ -14,6 +14,8 @@ app.get('/', (req, res, next)=> {
 ////-------------endpoints-----------////
 const restCtrl = require("./Controllers/restaurantController")
 app.get("/api/restaurants", restCtrl.getRestaurants)
+app.get("/api/restaurants/zip", restCtrl.getZipRestaurants) //to get restaurants within zip
+app.get("/api/restaurants/feed", restCtrl.feedRecipientsRest) //feed recipients
 app.post("/api/restaurants", restCtrl.addRestaurant)
 app.delete("/api/restaurants/:id", restCtrl.removePost);
 
