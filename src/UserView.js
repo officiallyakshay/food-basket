@@ -1,7 +1,7 @@
 import React from 'react';
 import { Link } from 'react-router-dom'
 
-class Restaurant extends React.Component {
+class UserView extends React.Component {
   constructor(props) {
     super(props);
     this.state = {}
@@ -22,4 +22,4 @@ class Restaurant extends React.Component {
   };
 };
 
-export default Restaurant;
+export default UserView;
