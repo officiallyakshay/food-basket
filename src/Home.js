@@ -15,12 +15,12 @@ class Home extends React.Component {
         </div>
         <div className="form">
           <form>
-            <button onClick={(ev) => onClick(ev)}>
-              <Link to="/restaurant">Feed Now</Link>
+            <button style={{ borderRadius: 45 }} onClick={(ev) => onClick(ev)}>
+              <Link style={{ textDecoration: 'none', color: 'blue' }} to="/nh">Feed Now</Link>
             </button>
             <br />
-            <button onClick={(ev) => onClick(ev)}>
-              <Link to="/getfood">Get Food</Link>
+            <button style={{ borderRadius: 45 }} onClick={(ev) => onClick(ev)}>
+              <Link style={{ textDecoration: 'none', color: 'blue' }} to="/getfood">Get Food</Link>
             </button>
           </form>
         </div>
