@@ -12,16 +12,35 @@ export default function RestaurantList() {
   }, []);
 
   return (
-    <div>
+    <div style={{maxHeight: '1100', maxWidth: '580', 'overflow-y': 'scroll'
+
+  }}>
       {restaurants.map((restaurant) => (
-        <div>
-          <div className="restaurantlist">{restaurant.name}</div>
-          <div>{restaurant.quantity}</div>
-          <div>{restaurant.address}</div>
-          <div>{restaurant.zipcode}</div>
-          <div>{restaurant.contact}</div>
-          <div>{restaurant.start}</div>
-          <div>{restaurant.end}</div>
+        <div
+          className="restaurantlist"
+          style={{
+            backgroundColor: "rgb(240, 240, 245)",
+            marginTop: 20,
+            marginBottom: 20,
+            paddingTop: 33,
+            paddingBottom: 20,
+            width: 550,
+            height: 135,
+            boxShadow: "3px 3px 3px #888888 inset",
+            borderRadius: 20,
+          }}
+        >
+          <div style={{ paddingLeft: 20, fontSize: "24px", marginBottom: 6, fontWeight: "bold"}}>
+            Restaurant: {restaurant.name}
+          </div>
+          <div style={{ paddingLeft: 30, fontSize: "18px" }}>
+            Meals Avaliable: {restaurant.quantity}
+          </div>
+          <div style={{ paddingLeft: 30,fontSize: "18px" }}> Location:   {restaurant.address.replace(/\\/g, '')}</div>
+          <div style={{ paddingLeft: 30,fontSize: "18px" }}>Zip:   {restaurant.zipcode}</div>
+          <div style={{ paddingLeft: 30,fontSize: "18px" }}>Phone:  {restaurant.contact}</div>
+          <div style={{ paddingLeft: 30,fontSize: "18px" }}>{restaurant.start}</div>
+          <div style={{ paddingLeft: 30,fontSize: "18px" }}>{restaurant.end}</div>
         </div>
       ))}
     </div>
