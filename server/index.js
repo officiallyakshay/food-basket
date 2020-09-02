@@ -11,4 +11,12 @@ app.get('/', (req, res, next)=> {
   res.sendFile(path.join(__dirname, '../index.html'));
 });
 
+////-------------endpoints-----------////
+const restCtrl = require("./Controllers/restaurantController")
+app.get("/api/restaurants", restCtrl.getRestaurants)
+app.post("/api/restaurants", restCtrl.addRestaurant)
+app.delete("/api/restaurants/:id", restCtrl.removePost);
+
+
+
 app.listen(port, ()=> console.log(`listening on port ${port}`));
