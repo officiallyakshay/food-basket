@@ -1,4 +1,5 @@
 const sqlite3 = require('sqlite3').verbose();
+var util = require('util');
 let Restaurant = require('./restaurant.js');
 
 
@@ -31,7 +32,7 @@ var readRecords = function(callback) {
               end = row.end
          );
          console.log(util.inspect(row));
-         console.log(rest.name + "\t")
+         //console.log(rest.name + "\t")
          //console.log(rest + "\t");       //Prints out the Restaurant Object called rest. 
           callback(row);
        });
@@ -45,5 +46,9 @@ var readRecords = function(callback) {
     });
 }
 
+//Calling function using callback
+readRecords(function(row){
+    console.log(row + "\t")
+});
 
 
