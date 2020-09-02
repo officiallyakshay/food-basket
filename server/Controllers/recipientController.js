@@ -35,17 +35,6 @@ const recipients = [
     const index = recipients.findIndex(element =>element.name === +name)
     recipients.splice(index, 1)
     res.status(200).send(recipients)
-    },
-    //Changed it from in restaurantController.js to here since it's from the recipient's side
-    getZipRestaurants: (req, res) => {
-      queries.readRestaurantsInZip((e, r) => {
-        if (e) {
-          console.error("error at readrest", err.message)
-        res.status(500)
-        }
-        res.status(200).send(req.params)
-      }
-      )
-    },
+    }
   };
   
