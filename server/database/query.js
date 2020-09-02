@@ -14,7 +14,7 @@ var readRestaurants = function(callback) {
     db.close()
 }
 
-var readRecipients = function(callback) {
+var readRecipients = function(zipcode, callback) {
   let db = new sqlite3.Database('./server/database/reci.db', sqlite3.OPEN_READWRITE);
 
   let results = []
@@ -22,16 +22,13 @@ var readRecipients = function(callback) {
   db.close()
 }
 
+/*var feedRecipients = function(callback) {
+  let db = new sqlite3.Database('./server/database/tinyDB.db', sqlite3.OPEN_READWRITE);
+
+}*/
+
 module.exports = {
   readRestaurants,
   readRecipients
 }
 
-//Use for debugging purposes
-/*db.close((err) => {
-    if (err) {
-      console.error(err.message);
-    }
-    console.log('Close the database connection.');
-});
-*/

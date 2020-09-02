@@ -19,8 +19,8 @@ app.delete("/api/restaurants/:id", restCtrl.removePost);
 
 const reciCtrl = require("./Controllers/recipientController")
 app.get("/api/recipients", reciCtrl.getRecipients)
-app.post("/api/restaurants", reciCtrl.addRecipient)
-app.delete("/api/restaurants/:id", reciCtrl.removeRecipient);
+app.post("/api/recipients", reciCtrl.addRecipient)
+app.delete("/api/recipients/:id", reciCtrl.removeRecipient);
 
 
 
