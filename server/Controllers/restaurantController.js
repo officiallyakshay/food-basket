@@ -59,7 +59,7 @@ module.exports = {
         console.error("error at readrest", err.message)
       res.status(500)
       }
-      res.status(200).send(r)
+      res.status(200).send(req.params)
     }
     )
   },
@@ -85,5 +85,16 @@ module.exports = {
   const index = restaurants.findIndex(element =>element.id === +id)
   restaurants.splice(index, 1)
   res.status(200).send(restaurants)
-  }
+  },
+      //Changed it from in restaurantController.js to here since it's from the recipient's side
+      getZipRestaurants: (req, res) => {
+        queries.readRestaurantsInZip((e, r) => {
+          if (e) {
+            console.error("error at readrest", err.message)
+          res.status(500)
+          }
+          res.status(200).send(req.params)
+        }
+        )
+      }
 };
